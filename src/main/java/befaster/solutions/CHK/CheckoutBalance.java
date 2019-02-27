@@ -44,12 +44,15 @@ public class CheckoutBalance implements Checkout {
     		}
     		else if(!itemProcessed.contains(item)){ 
     			int count = Collections.frequency(shoppingCart, item);
-                normalPriceTotalBalance += count * basePrice.get(item);
-                itemProcessed.add(item);
+    			if(basePrice.get(item)!=null) {
+    				normalPriceTotalBalance += count * basePrice.get(item);
+    				itemProcessed.add(item);
+    			}
     		}
     	}
     	return (normalPriceTotalBalance+discountedTotalBalance);
     }
 }
+
 
 
