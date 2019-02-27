@@ -44,10 +44,19 @@ public class SumSolutionTest {
     	}
     }
     
+    @Test(expected = NumberOutOfRangeException.class)
+    public void compute_negative_input() throws NumberOutOfRangeException {
+    	try {
+    		sum.compute(1000, -1);
+    	} catch(Exception e) {
+    		
+    	}
+    }
+    
     @Test
     public void compute_sum100with0()  {
     	try {
-    		assertThat(sum.compute(0, 100)).equals(100);
+    		 assertThat(sum.compute(100, 0), equalTo(2));
     	} catch(Exception e) {
     		
     	}
@@ -57,4 +66,5 @@ public class SumSolutionTest {
     
     
 }
+
 
