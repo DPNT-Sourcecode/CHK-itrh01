@@ -9,11 +9,13 @@ public class CheckoutSolution {
 	
 	private Set<CheckoutStrategy> strategies = new HashSet<>();
 
-	public static Map<String, Double> PRICE_MAP = new HashMap<>();
+	public static Map<String, Integer> PRICE_MAP = new HashMap<>();
 
 	static {
 	    PRICE_MAP.put("A", 50);
-	    PRICE_MAP.put("B" 30);
+	    PRICE_MAP.put("B", 30);
+	    PRICE_MAP.put("C", 20);
+	    PRICE_MAP.put("D", 15);
 	}
 
     public Integer checkout(String skus) {
@@ -21,6 +23,7 @@ public class CheckoutSolution {
     	return 0;
     }
 }
+
 
 
 
