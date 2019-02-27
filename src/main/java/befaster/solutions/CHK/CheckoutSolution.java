@@ -26,7 +26,7 @@ public class CheckoutSolution {
     	for(int index=0; index < skus.length(); index++) {
     		shoppingCart.add(skus.substring(index, index+1));	
     	}
-    	return 0;
-    
+    	return pricing.calculateTotal(shoppingCart);
     }
 }
+
