@@ -11,6 +11,15 @@ public class DiscountValue implements Checkout {
     private final String discountedItem;
     private final int minimumAmount;
     private final int discountPrice;
+    
+    public void addPrice() {
+    	
+    }
+    
+    public int getPrice(String Item) {
+    	return discountPrice;
+    }
+    
 
     public DiscountValue(Checkout base, String item, int min, int discount) {
          this.baseCheckout = base;
@@ -29,3 +38,4 @@ public class DiscountValue implements Checkout {
         return discountedTotal;
     }
 }
+
