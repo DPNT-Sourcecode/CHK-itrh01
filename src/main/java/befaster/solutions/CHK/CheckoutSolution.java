@@ -1,5 +1,7 @@
 package befaster.solutions.CHK;
 
+import java.awt.List;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -7,18 +9,13 @@ import java.util.Set;
 
 public class CheckoutSolution {
 	
-	private Set<CheckoutStrategy> strategies = new HashSet<>();
-
-	public static Map<String, Integer> PRICE_MAP = new HashMap<>();
-
-	static {
-	    PRICE_MAP.put("A", 50);
-	    PRICE_MAP.put("B", 30);
-	    PRICE_MAP.put("C", 20);
-	    PRICE_MAP.put("D", 15);
-	}
-
     public Integer checkout(String skus) {
+    	ArrayList<String> shoppingCart = new ArrayList<>();
+    	for(int index=0; index < skus.length(); index++) {
+    		shoppingCart.add(skus.substring(index, index+1));
+    	}
+    	
+    	calculateTotal
        
     	return 0;
     }
