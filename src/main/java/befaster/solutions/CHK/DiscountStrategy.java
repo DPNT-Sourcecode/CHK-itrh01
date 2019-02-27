@@ -1,7 +1,8 @@
 package befaster.solutions.CHK;
 
-import Checkout;
+
 import java.util.List;
+import befaster.solutions.CHK.CheckoutSolution;
 
 public class DiscountStrategy implements CheckoutStrategy {
 
@@ -9,8 +10,8 @@ public class DiscountStrategy implements CheckoutStrategy {
 public void calculateTotal(List<String> items, double[] result) {
     ItemCounter counter = items.stream().collect(ItemCounter::new, ItemCounter::accept, ItemCounter::combine);
 
-    double appleDiscount = (counter.counts[ItemCounter.APPLE_INDEX] / 2) * Checkout.PRICE_MAP.get("Apple");
-    double orangeDiscount = (counter.counts[ItemCounter.ORANGE_INDEX] / 3) * Checkout.PRICE_MAP.get("Orange");
+    double appleDiscount = (counter.counts[ItemCounter.APPLE_INDEX] / 2) * CheckoutSolution.PRICE_MAP.get("Apple");
+    double orangeDiscount = (counter.counts[ItemCounter.ORANGE_INDEX] / 3) * CheckoutSolution.PRICE_MAP.get("Orange");
 
     result[0] -= orangeDiscount;
     result[0] -= appleDiscount;
