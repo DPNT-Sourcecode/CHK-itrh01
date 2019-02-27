@@ -12,8 +12,8 @@ public class CheckoutSolution {
 	public static Map<String, Double> PRICE_MAP = new HashMap<>();
 
 	static {
-	    PRICE_MAP.put("Orange", 0.25);
-	    PRICE_MAP.put("Apple", 0.6);
+	    PRICE_MAP.put("A", 50);
+	    PRICE_MAP.put("B" 30);
 	}
 
     public Integer checkout(String skus) {
@@ -21,5 +21,6 @@ public class CheckoutSolution {
     	return 0;
     }
 }
+
 
 
