@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static befaster.solutions.CHK.CheckoutSolution.PRICE_MAP;
-
 
 public class SimpleCheckout implements Checkout {
 
@@ -21,5 +19,6 @@ public class SimpleCheckout implements Checkout {
         return shoppingCart.stream().mapToInt(basePrice::get).sum();
     }
 }
+
 
 
