@@ -17,6 +17,10 @@ public class CheckoutSolution {
     	pricing.addPrice("C", 20);
     	pricing.addPrice("D", 15);
     	
+    	// Apply discounted offers
+    	pricing = new DiscountValue(pricing, "A", 3, 130); 
+    	pricing = new DiscountValue(pricing, "B", 2, 45); 
+    	
     	
     	ArrayList<String> shoppingCart = new ArrayList<>();
     	for(int index=0; index < skus.length(); index++) {

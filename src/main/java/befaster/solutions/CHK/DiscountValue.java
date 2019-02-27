@@ -23,7 +23,8 @@ public class DiscountValue implements Checkout {
     public int calculateTotal(List<String> shoppingCart) {
         int count = Collections.frequency(shoppingCart, discountedItem);
         // Integer division gives the number of times the discount is applied
-        int deduction = (count / minimumAmount) * discountValue;
-        return baseCheckout.calculateTotal(shoppingCart) - deduction;
+        int discountedTotal = (count / minimumAmount) * discountValue;
+       
+        return discountedTotal;
     }
 }
