@@ -1,32 +1,27 @@
 package befaster.solutions.CHK;
 
-import java.awt.List;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 public class CheckoutSolution {
 	
-    public Integer checkout(String skus) {
+    public static Integer checkout(String skus) {
     	
-    	Checkout pricing = new SimpleCheckout();
+    	CheckoutBalance pricing = new CheckoutBalance();
     	pricing.addPrice("A", 50);
     	pricing.addPrice("B", 30);
     	pricing.addPrice("C", 20);
     	pricing.addPrice("D", 15);
     	
-    	// Apply discounted offers
-    	pricing = new DiscountValue(pricing, "A", 3, 130); 
-    	pricing = new DiscountValue(pricing, "B", 2, 45); 
     	
+    	// Apply discounted offers
+    	pricing.addDiscount("A", new DiscountValue( "A", 3, 130, 50)); 
+    	pricing.addDiscount("B",new DiscountValue("B", 2, 45, 30)); 
     	
     	ArrayList<String> shoppingCart = new ArrayList<>();
     	for(int index=0; index < skus.length(); index++) {
     		shoppingCart.add(skus.substring(index, index+1));	
     	}
+    	
     	return pricing.calculateTotal(shoppingCart);
     }
 }
-
