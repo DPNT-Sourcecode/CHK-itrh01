@@ -35,6 +35,7 @@ public class CheckoutBalance implements Checkout {
     	ArrayList<String> itemProcessed = new ArrayList<>();
     	int discountedTotalBalance = 0;
     	int normalPriceTotalBalance = 0;
+    	
     	for(String item :shoppingCart) {
     		if(discounts.containsKey(item)) {
     			if(!itemProcessed.contains(item)) {
@@ -50,9 +51,14 @@ public class CheckoutBalance implements Checkout {
     			}
     		}
     	}
-    	return (normalPriceTotalBalance+discountedTotalBalance);
+    	
+    	if((normalPriceTotalBalance+discountedTotalBalance)!=0)
+    		return (normalPriceTotalBalance+discountedTotalBalance);
+    	else 
+    		return -1;
     }
 }
+
 
 
 
