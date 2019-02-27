@@ -12,7 +12,9 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
     	
     	Checkout pricing = new SimpleCheckout();
-    	pricing.addPrice("A", );
+    	pricing.addPrice("A", new Integer(50));
+    	pricing.addPrice("B", new Integer(30));
+    	
     	
     	ArrayList<String> shoppingCart = new ArrayList<>();
     	for(int index=0; index < skus.length(); index++) {
@@ -22,5 +24,6 @@ public class CheckoutSolution {
     
     }
 }
+
 
 
