@@ -12,12 +12,12 @@ public class DiscountValue implements Checkout {
     private final int minimumAmount;
     private final int discountPrice;
     
-    @Override
+    
     public void addPrice(String item, Integer price) {
     	
     }
     
-    @Override
+    
     public int getPrice(String Item) {
     	return 0;
     }
@@ -40,5 +40,6 @@ public class DiscountValue implements Checkout {
         return discountedTotal;
     }
 }
+
 
 
