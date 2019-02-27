@@ -19,4 +19,19 @@ public class SumSolutionTest {
     public void compute_sum() {
         assertThat(sum.compute(1, 1), equalTo(2));
     }
+    
+    @Test
+    public void compute_sum200() {
+        assertThat(sum.compute(100, 100), equalTo(200));
+    }
+    
+    @Test
+    public void compute_sum201() {
+        assertThat(sum.compute(1001, 100), equalTo(0));
+    }
+    
+    
+    
+    
 }
+
