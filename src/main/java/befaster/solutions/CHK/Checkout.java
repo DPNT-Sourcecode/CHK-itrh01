@@ -7,5 +7,3 @@ public interface Checkout {
 	public void addPrice(String item, Integer price);
 	public int  getPrice(String item);
 }
-
-
