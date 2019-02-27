@@ -1,7 +1,7 @@
 package befaster.solutions.CHK;
 
 import java.util.List;
-import static Checkout.PRICE_MAP;
+import static befaster.solutions.CHK.CheckoutSolution.PRICE_MAP;
 
 public class SummingStrategy implements CheckoutStrategy {
 

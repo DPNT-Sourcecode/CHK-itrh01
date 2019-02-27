@@ -10,16 +10,16 @@ public class DiscountStrategy implements CheckoutStrategy {
 public void calculateTotal(List<String> items, double[] result) {
     ItemCounter counter = items.stream().collect(ItemCounter::new, ItemCounter::accept, ItemCounter::combine);
 
-    double appleDiscount = (counter.counts[ItemCounter.APPLE_INDEX] / 2) * CheckoutSolution.PRICE_MAP.get("Apple");
-    double orangeDiscount = (counter.counts[ItemCounter.ORANGE_INDEX] / 3) * CheckoutSolution.PRICE_MAP.get("Orange");
+    double appleDiscount = (counter.counts[ItemCounter.A_INDEX] / 2) * CheckoutSolution.PRICE_MAP.get("Apple");
+    double orangeDiscount = (counter.counts[ItemCounter.B_INDEX] / 3) * CheckoutSolution.PRICE_MAP.get("Orange");
 
     result[0] -= orangeDiscount;
     result[0] -= appleDiscount;
 }
 
 class ItemCounter {
-    static final int APPLE_INDEX = 0;
-    static final int ORANGE_INDEX = 1;
+    static final int A_INDEX = 0;
+    static final int B_INDEX = 1;
     private int[] counts = new int[2];
 
     public void accept(String item) {
@@ -45,3 +45,4 @@ class ItemCounter {
     }
 
  }
+
