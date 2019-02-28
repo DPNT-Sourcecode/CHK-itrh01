@@ -1,6 +1,7 @@
 package befaster.solutions.CHK;
 
 import java.util.ArrayList;
+import befaster.runner.InvalidInputException;
 
 public class CheckoutSolution {
 	
@@ -18,10 +19,21 @@ public class CheckoutSolution {
     	pricing.addDiscount("B",new DiscountValue("B", 2, 45, 30)); 
     	
     	ArrayList<String> shoppingCart = new ArrayList<>();
-    	for(int index=0; index < skus.length(); index++) {
-    		shoppingCart.add(skus.substring(index, index+1));	
+    	try { 
+    		if(skus.length()==0) {
+    			return 0;
+    		}
+    		for(int index=0; index < skus.length(); index++) {
+    			String sku = skus.substring(index, index+1);
+    			if(sku!="A" && sku!="B"&& sku!="C" && sku!="D") {
+    				throw new InvalidInputException();
+    			}
+    			shoppingCart.add(sku);	
+    		}
     	}
-    	
+    	catch(InvalidInputException e) {
+    		return -1;
+    	}
     	return pricing.calculateTotal(shoppingCart);
     }
 }
