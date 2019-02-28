@@ -25,7 +25,7 @@ public class CheckoutSolution {
     		}
     		for(int index=0; index < skus.length(); index++) {
     			String sku = skus.substring(index, index+1);
-    			if(sku!="A" && sku!="B"&& sku!="C" && sku!="D") {
+    			if(sku!="A" && sku!="B" && sku!="C" && sku!="D") {
     				throw new InvalidInputException();
     			}
     			shoppingCart.add(sku);	
@@ -37,3 +37,4 @@ public class CheckoutSolution {
     	return pricing.calculateTotal(shoppingCart);
     }
 }
+
